@@ -5,13 +5,13 @@ from .eng import *
 # Create your views here.
 class HomePageView(TemplateView):
 
-    seq = []
     play = []
     play.append(start)
-    prev = ['ola']
+    seq = []
+    seq.append(play[0].description)
 
     def get(self, request, **kwargs):
-        seq = []
+        self.seq = []
         play = self.play[-1]
         self.seq.append(play.description)
         story = {
