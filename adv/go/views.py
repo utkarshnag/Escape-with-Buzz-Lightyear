@@ -11,11 +11,10 @@ class HomePageView(TemplateView):
     seq.append(play[0].description)
 
     def get(self, request, **kwargs):
-        self.seq = []
-        play = self.play[-1]
-        self.seq.append(play.description)
+        seq = []
+        seq.append(start.description)
         story = {
-            'sequence': self.seq
+            'sequence': seq
         }
         return render(request, 'index.html', story)
     
