@@ -36,6 +36,11 @@ class HomePageView(TemplateView):
                 self.play.append(play)
                 done = 1
                 break
+
+        if (text == 'try again' or text == 'restart'):
+            done = 1
+            self.play.append(start)
+            self.seq.append(self.play[0].description)
                 
         if (done == 0):
             self.seq.append("Try something else or be more specific.")
